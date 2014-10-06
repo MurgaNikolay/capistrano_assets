@@ -1,5 +1,23 @@
 
 
+Gemfile
+
+    group :development do
+      gem 'capistrano', '~> 3.1.0', require: false
+      gem 'capistrano-rvm', require: false
+      gem 'capistrano-bundler', '~> 1.1.2', require: false
+      gem 'capistrano-assets', github: 'MurgaNikolay/capistrano_assets', require: false
+    end
+
+Capfile
+
+    #depends on what you need to build
+    #require 'capistrano/rvm'
+    # require 'capistrano/rbenv'
+    # require 'capistrano/chruby'
+    # require 'capistrano/bundler'
+    require 'capistrano/assets' 
+        
 deploy.rb
 
     #Set git tag for assets version
@@ -34,7 +52,6 @@ Result for version 1.0.0:
     /var/www/assets/shared/assets/1.0.0/javascripts/application.js
     /var/www/assets/shared/assets/1.0.0/styleshets/application.css
     ...
-    
     
     http://cdn.assets.example.com/assets/1.0.0/images/bg.png
     http://cdn.assets.example.com/assets/1.0.0/javascripts/application.js
