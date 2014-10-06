@@ -11,3 +11,15 @@ deploy.rb
       'npm install',
       'bundle exec grunt'
     ]
+    
+stages/production.rb
+
+    server 'assets.example.com', user: 'deploy', roles: %w{assets}
+    
+    #deploy some version (version will be requested)
+    cap production assets:deploy
+
+    #or all release (can take a lot of time)
+    cap production assets:deploy_all
+    
+    
