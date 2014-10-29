@@ -54,7 +54,7 @@ namespace :assets do
       puts 'Copy assets to assets release path'
       execute('mkdir', '-p', fetch(:assets_release_path))
       fetch(:assets_build_path).each do |assets_path|
-        execute('cp', '-r', "#{assets_path}*", "#{fetch(:assets_release_path)}/")
+        execute('cp', '-r', "#{assets_path}/*", "#{fetch(:assets_release_path)}/")
       end
     end
     reinvoke :'assets:after'
