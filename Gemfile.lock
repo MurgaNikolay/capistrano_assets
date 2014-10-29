@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    capistrano-assets (1.0.0)
+    capistrano-assets (1.0.1)
 
 GEM
   remote: https://rubygems.org/
